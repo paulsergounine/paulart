@@ -77,8 +77,8 @@ a{color:inherit;text-decoration:none}
 }
 .work:last-child{border-bottom:0}
 .work.reveal{
-  opacity:0;transform:translateY(24px);
-  transition:opacity .7s ease-out,transform .7s ease-out;
+  opacity:0;transform:translateY(56px);
+  transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1);
 }
 .work.reveal.is-in{opacity:1;transform:none}
 .work__meta{display:flex;flex-direction:column;position:sticky;top:88px;padding-top:4px}
