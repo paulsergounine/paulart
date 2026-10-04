@@ -12,7 +12,8 @@ A change may go to `main` (live) only when all of these hold.
 ## Quality
 - [ ] Desktop (1440 px) and phone (390 px) screenshots of every changed page reviewed — no overlaps, no horizontal scrolling, no empty image boxes.
 - [ ] Every image exists in 800 / 1200 / 1600 px; a 1600 px image is at most 900 KB.
-- [ ] The first work loads immediately; all others load lazily. No JavaScript, no layout shift (width/height set on every image).
+- [ ] The first work loads immediately; all others load lazily. No JavaScript apart from `viewer.js`, no layout shift (width/height set on every image).
+- [ ] Viewer tested: opens, closes (X, Esc, margin), previous/next, zoom and pan with mouse and touch; with JavaScript off, a work image opens the 1600 px file.
 - [ ] All internal links work (`check.py` verifies them).
 
 ## Process

@@ -5,7 +5,7 @@ Purpose: a credible, quiet site for curators, institutions, prize juries and col
 This repo is separate from Nimbavero. Nothing from the nimbavero org belongs here.
 
 ## How the site is built
-- Plain static HTML/CSS, no framework, no JavaScript. Hosted on GitHub Pages from `main`; domain `paulsergounine.art` (file `CNAME`), `paulsergounine.com` forwards to it at GoDaddy.
+- Plain static HTML/CSS, no framework. No JavaScript except `viewer.js`, the full-screen image viewer on the Work page (own code, no libraries, no tracking). Every page must work fully without it: the work images are plain links to the 1600 px file. Hosted on GitHub Pages from `main`; domain `paulsergounine.art` (file `CNAME`), `paulsergounine.com` forwards to it at GoDaddy.
 - **`data/works.json` is the single source of truth for the Work page.** `index.html` is generated:
   `python3 scripts/build.py` (template: `templates/index.html`). Never edit the works section of `index.html` by hand.
 - Photos: `scripts/add_image.sh <no> "<original>"` writes `images/800|1200|1600/mm-NN.jpg`. Originals stay in Paul's iCloud folder `~/Library/Mobile Documents/com~apple~CloudDocs/Art/` and are never committed.

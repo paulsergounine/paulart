@@ -52,8 +52,9 @@ for f in html_files:
         errors.append(f"{f.name}: birthplace mentioned (public material shows birth year only)")
     if re.search(r"[€$£]\s?\d|\d\s?(€|EUR|USD)", text):
         errors.append(f"{f.name}: looks like a price (all sales go through the gallery)")
-    if "<script" in text and "src=" in text.split("<script", 1)[1][:200]:
-        warnings.append(f"{f.name}: external script tag")
+    for tag in re.findall(r"<script\b[^>]*>", text):
+        if 'src="viewer.js"' not in tag:
+            errors.append(f"{f.name}: script other than viewer.js: {tag}")
     for src in re.findall(r'(?:src|href)="([^"#:]+)"', text):
         if not (ROOT / src.split("?")[0]).exists():
             errors.append(f"{f.name}: broken link {src}")
@@ -61,6 +62,8 @@ for f in html_files:
 index = (ROOT / "index.html").read_text(encoding="utf-8")
 if "{{" in index:
     errors.append("index.html still contains template placeholders, run scripts/build.py")
+if index.count('class="work__open"') != len(works):
+    errors.append("a work is missing its full-screen viewer link, run scripts/build.py")
 if index.count('class="work"') != len(works):
     errors.append("index.html is out of date with data/works.json, run scripts/build.py")
 
