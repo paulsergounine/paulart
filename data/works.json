@@ -1,0 +1,197 @@
+{
+  "_readme": "Single source of truth for the Work page. Edit here, then run: python3 scripts/build.py. Fields set to null are not yet confirmed by Paul and are left off the page. Catalogue = 'Mind Mechanics, Selected Works 2025-2026' (Galerie Bruno Massa); where a work is in the catalogue, its wording wins.",
+  "series": {
+    "title": "Mind Mechanics",
+    "years": "2025 —",
+    "planned": 250,
+    "made": 58,
+    "facts": [
+      "Oil stick · oil pastel",
+      "Black acrylic ground",
+      "100 × 120 to 200 × 240 cm"
+    ]
+  },
+  "works": [
+    {
+      "no": 58,
+      "suffix": "Assemblage I",
+      "year": "2026",
+      "technique": "Oil stick, spray paint and parchment paper assemblage on acrylic ground on canvas",
+      "size": "200 × 240 cm",
+      "source": "catalogue",
+      "note": "In progress, from ground to finished work",
+      "process": [
+        {
+          "img": "mm-58-process-1.jpg",
+          "label": "i · Ground",
+          "alt": "black acrylic ground before the first mark"
+        },
+        {
+          "img": "mm-58-process-2.jpg",
+          "label": "ii · Structure and graft",
+          "alt": "profile laid in with a grafted fragment"
+        },
+        {
+          "img": "mm-58-process-3.jpg",
+          "label": "iii · Detail",
+          "alt": "detail of the grafted fragment"
+        }
+      ]
+    },
+    {
+      "no": 50,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "200 × 240 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 49,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "file name of submission image"
+    },
+    {
+      "no": 48,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "Paul, 4 Oct 2026"
+    },
+    {
+      "no": 45,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "Paul, 4 Oct 2026"
+    },
+    {
+      "no": 44,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "Paul, 4 Oct 2026"
+    },
+    {
+      "no": 40,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "Paul, 4 Oct 2026"
+    },
+    {
+      "no": 35,
+      "suffix": "Excavation III",
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "Paul, 4 Oct 2026"
+    },
+    {
+      "no": 32,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "Paul, 4 Oct 2026"
+    },
+    {
+      "no": 30,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "portfolio"
+    },
+    {
+      "no": 29,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "Paul, 4 Oct 2026"
+    },
+    {
+      "no": 27,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 26,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 25,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 24,
+      "year": "2026",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 23,
+      "year": "2025",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 22,
+      "year": "2025",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 13,
+      "year": "2025",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 11,
+      "year": "2025",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 10,
+      "year": "2025",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "portfolio; year confirmed by Paul (all works before No. 24 are 2025)"
+    },
+    {
+      "no": 3,
+      "year": "2025",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "Paul, 4 Oct 2026"
+    },
+    {
+      "no": 2,
+      "year": "2025",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    },
+    {
+      "no": 1,
+      "year": "2025",
+      "technique": "Oil stick and oil pastel on acrylic ground on canvas",
+      "size": "100 × 120 cm",
+      "source": "catalogue"
+    }
+  ]
+}
