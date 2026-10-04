@@ -175,3 +175,11 @@ a{color:inherit;text-decoration:none}
   .work.reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+/* ---------- cv ---------- */
+.cv__intro{font-family:var(--serif);font-size:clamp(17px,1.8vw,19.5px);color:#33312C;margin-bottom:clamp(30px,4vw,44px)}
+.cv__sec{border-top:1px solid var(--rule);padding:18px 0 22px}
+.cv__h{font-size:10px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.cv__row{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:4px 0}
+.cv__when{font-family:var(--serif);font-size:15px;color:var(--dim);font-variant-numeric:oldstyle-nums}
+.cv__what{font-family:var(--serif);font-size:16.5px;line-height:1.5;color:var(--ink)}
