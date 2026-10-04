@@ -16,7 +16,7 @@ This repo is separate from Nimbavero. Nothing from the nimbavero org belongs her
 1. Public material shows **birth year only (1984), never the birthplace.**
 2. **No prices, no availability.** All sales enquiries go to Galerie Bruno Massa.
 3. **The catalogue "Mind Mechanics, Selected Works 2025–2026" is the authority** for title, year, technique and size of every work it contains. Copy its wording exactly.
-4. Years: Nos. 1–15 and Nos. 20, 22, 23 are 2025; all others from No. 16 are 2026 (unless the catalogue says otherwise).
+4. Years (Paul, 4 Oct 2026): every work before No. 24 is 2025; No. 24 onwards is 2026 (the catalogue agrees).
 5. Never guess a size or technique. If unknown, set it to `null` in `works.json` and ask Paul. `check.py` blocks publishing with unconfirmed fields.
 6. Works are "numbered in the order made, not titled". Sub-titles only as the catalogue writes them, e.g. "(Assemblage I)", "(Excavation III)".
 7. Works that were cut up and absorbed into later paintings may still be shown; mark them in `works.json` with a note such as "Absorbed into No. 56".
