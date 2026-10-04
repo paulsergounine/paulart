@@ -44,7 +44,8 @@ def picture(name, alt, first=False):
 def figure(work, first):
     name = f"mm-{work['no']:02d}.jpg"
     t = title(work)
-    plate = picture(name, t, first)
+    plate = (f'<a class="work__open" href="images/1600/{name}" data-caption="{escape(t)}">'
+             f'{picture(name, t, first)}</a>')
     if work.get("process"):
         steps = "".join(
             f'\n            <div class="process__step">'
