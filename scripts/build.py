@@ -47,14 +47,19 @@ def figure(work, first):
     plate = (f'<a class="work__open" href="images/1600/{name}" data-caption="{escape(t)}">'
              f'{picture(name, t, first)}</a>')
     if work.get("process"):
-        steps = "".join(
-            f'\n            <div class="process__step">'
-            f'\n              <img src="images/800/{p["img"]}" alt="{escape(t + ", " + p["alt"])}" '
-            f'width="900" height="1600" loading="lazy" decoding="async">'
-            f'\n              <span>{escape(p["label"])}</span>'
-            f'\n            </div>'
-            for p in work["process"])
-        plate += f'\n          <div class="process">{steps}\n          </div>'
+        steps = ""
+        for p in work["process"]:
+            pw, ph = jpeg_size(ROOT / "images" / "800" / p["img"])
+            cap = f'{t}, {p["label"]}'
+            steps += (f'\n            <div class="process__step">'
+                      f'\n              <a class="work__open process__open" href="images/1600/{p["img"]}" data-caption="{escape(cap)}">'
+                      f'<img src="images/800/{p["img"]}" alt="{escape(t + ", " + p["alt"])}" '
+                      f'width="{pw}" height="{ph}" loading="lazy" decoding="async"></a>'
+                      f'\n              <span>{escape(p["label"])}</span>'
+                      f'\n            </div>')
+        plate += f'\n          <div class="process n{len(work["process"])}">{steps}\n          </div>'
+        if work.get("process_text"):
+            plate += f'\n          <p class="process__text">{escape(work["process_text"])}</p>'
     meta = [f'<span class="work__num">No. {work["no"]}</span>',
             f'<span class="work__title">{escape(t)}</span>']
     meta += [f'<span class="work__dim">{escape(v)}</span>'

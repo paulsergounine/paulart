@@ -19,24 +19,30 @@
       "technique": "Oil stick, spray paint and parchment paper assemblage on acrylic ground on canvas",
       "size": "200 × 240 cm",
       "source": "catalogue",
-      "note": "In progress, from ground to finished work",
+      "note": "Shown with its process: from an earlier painting to the finished work",
       "process": [
         {
           "img": "mm-58-process-1.jpg",
-          "label": "i · Ground",
-          "alt": "black acrylic ground before the first mark"
+          "label": "i · Red ground, parchment paper, yellow splatter",
+          "alt": "red canvas with parchment paper laid onto the colour and yellow paint splattered over it"
         },
         {
           "img": "mm-58-process-2.jpg",
-          "label": "ii · Structure and graft",
-          "alt": "profile laid in with a grafted fragment"
+          "label": "ii · Second layer of parchment, painted black",
+          "alt": "a second layer of parchment paper, painted black"
         },
         {
           "img": "mm-58-process-3.jpg",
-          "label": "iii · Detail",
-          "alt": "detail of the grafted fragment"
+          "label": "iii · Spray paint and oil stick",
+          "alt": "the profile drawn in spray paint and oil stick on the black layer"
+        },
+        {
+          "img": "mm-58-process-4.jpg",
+          "label": "iv · Excavation",
+          "alt": "detail of the excavation: the red and yellow layers surfacing inside the head"
         }
-      ]
+      ],
+      "process_text": "No. 58 is built in layers. It began as a red canvas. Parchment paper was laid onto the colour, and yellow paint was splattered over it. A second layer of parchment paper followed, painted black, and on this ground the profile was drawn in spray paint and oil stick. Only then did the excavation begin: digging back through the black until the red and yellow beneath surfaced again, as a fragment inside the head. No. 58 is the first work made this way."
     },
     {
       "no": 50,

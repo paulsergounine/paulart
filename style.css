@@ -94,11 +94,18 @@ a{color:inherit;text-decoration:none}
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:clamp(8px,1.4vw,16px);margin-top:clamp(12px,1.8vw,20px);
 }
+.process.n4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.process__step a{display:block;cursor:zoom-in}
 .process__step img{aspect-ratio:9/14;object-fit:cover}
 .process__step span{
   display:block;margin-top:8px;font-size:10px;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--dim);
+  text-transform:uppercase;color:var(--dim);line-height:1.6;
 }
+.process__text{
+  font-family:var(--serif);font-size:clamp(15px,1.5vw,17px);line-height:1.6;color:#33312C;
+  max-width:60ch;margin-top:clamp(18px,2.4vw,28px);
+}
+@media (max-width:760px){.process.n4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ---------- prose pages ---------- */
 .sheet{max-width:62ch;padding:clamp(44px,8vw,104px) var(--pad) clamp(64px,10vw,140px)}
