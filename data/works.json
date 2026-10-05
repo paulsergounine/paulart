@@ -19,24 +19,30 @@
       "technique": "Oil stick, spray paint and parchment paper assemblage on acrylic ground on canvas",
       "size": "200 × 240 cm",
       "source": "catalogue",
-      "note": "In progress, from ground to finished work",
+      "note": "Shown with its process: from an earlier painting to the finished work",
       "process": [
         {
           "img": "mm-58-process-1.jpg",
-          "label": "i · Ground",
-          "alt": "black acrylic ground before the first mark"
+          "label": "i · Red ground, parchment paper",
+          "alt": "the earlier red painting with parchment paper laid over it"
         },
         {
           "img": "mm-58-process-2.jpg",
-          "label": "ii · Structure and graft",
-          "alt": "profile laid in with a grafted fragment"
+          "label": "ii · Overpainted black",
+          "alt": "the same canvas painted out in black"
         },
         {
           "img": "mm-58-process-3.jpg",
-          "label": "iii · Detail",
-          "alt": "detail of the grafted fragment"
+          "label": "iii · Structure, fragment left open",
+          "alt": "white profile sprayed over the black, an opening left on the earlier layer"
+        },
+        {
+          "img": "mm-58-process-4.jpg",
+          "label": "iv · Detail",
+          "alt": "detail of the earlier red and paper layer showing through"
         }
-      ]
+      ],
+      "process_text": "No. 58 began as a different painting: a red ground covered with parchment paper and worked over in yellow. That surface was painted out completely in black. The profile was then laid in with white spray paint, and inside the head an opening was left on the buried layer. The earlier painting survives only as this fragment, visible through the new one. Since No. 56 this is the method of the series: earlier works become the material of later ones."
     },
     {
       "no": 50,
