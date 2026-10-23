@@ -142,7 +142,7 @@ a{color:inherit;text-decoration:none}
 }
 .prose p.lede{
   font-size:clamp(20px,2.5vw,26px);line-height:1.42;color:var(--ink);
-  letter-spacing:-.008em;margin-bottom:1.35em;
+  letter-spacing:-.008em;margin-bottom:1.35em;font-style:italic;
 }
 .prose strong{font-weight:400;font-style:italic;color:var(--ink)}
 .divider{border:0;border-top:1px solid var(--rule);margin:clamp(40px,6vw,68px) 0 clamp(26px,4vw,40px)}
