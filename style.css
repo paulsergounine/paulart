@@ -1,12 +1,12 @@
 /* Paul Sergounine — paulsergounine.com */
 
 :root{
-  --paper:#F1F0ED;
-  --ink:#1C1B18;
-  --mid:#5E5B55;
-  --dim:#8C8880;
-  --rule:#D9D7D1;
-  --ochre:#1C1B18;
+  --paper:#FFFFFF;
+  --ink:#000000;
+  --mid:#000000;
+  --dim:#000000;
+  --rule:#D9D9D9;
+  --ochre:#000000;
   --serif:'Newsreader','Palatino Linotype','Palatino','Book Antiqua',Georgia,serif;
   --pad:clamp(20px,5vw,72px);
 }
@@ -31,7 +31,7 @@ a{color:inherit;text-decoration:none}
   font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--dim);border-bottom:1px solid transparent;padding-bottom:3px;
 }
-.nav__link:hover{color:var(--ink)}
+.nav__link:hover{color:var(--ink);border-bottom-color:var(--rule)}
 .nav__link[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ink)}
 .nav__link:focus-visible{outline:1px solid var(--ochre);outline-offset:4px}
 
@@ -102,7 +102,7 @@ a{color:inherit;text-decoration:none}
   text-transform:uppercase;color:var(--dim);line-height:1.6;
 }
 .process__text{
-  font-family:var(--serif);font-size:clamp(15px,1.5vw,17px);line-height:1.6;color:#33312C;
+  font-family:var(--serif);font-size:clamp(15px,1.5vw,17px);line-height:1.6;color:var(--ink);
   max-width:60ch;margin-top:clamp(18px,2.4vw,28px);
 }
 @media (max-width:760px){.process.n4{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -138,7 +138,7 @@ a{color:inherit;text-decoration:none}
 .prose p{
   font-family:var(--serif);font-weight:400;
   font-size:clamp(17px,1.8vw,19.5px);line-height:1.68;
-  color:#33312C;margin-bottom:1.15em;
+  color:var(--ink);margin-bottom:1.15em;
 }
 .prose p.lede{
   font-size:clamp(20px,2.5vw,26px);line-height:1.42;color:var(--ink);
@@ -184,7 +184,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ---------- cv ---------- */
-.cv__intro{font-family:var(--serif);font-size:clamp(17px,1.8vw,19.5px);color:#33312C;margin-bottom:clamp(30px,4vw,44px)}
+.cv__intro{font-family:var(--serif);font-size:clamp(17px,1.8vw,19.5px);color:var(--ink);margin-bottom:clamp(30px,4vw,44px)}
 .cv__sec{border-top:1px solid var(--rule);padding:18px 0 22px}
 .cv__h{font-size:10px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
 .cv__row{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:4px 0}
