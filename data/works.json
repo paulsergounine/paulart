@@ -199,5 +199,29 @@
       "size": "100 × 120 cm",
       "source": "catalogue"
     }
-  ]
+  ],
+  "pre_series": {
+    "_readme": "Earlier works shown after the numbered paintings, outside the 250-work cycle. Not counted in series.made. Titles confirmed by Paul (30 Oct 2026); year, technique and size not yet supplied, so they stay null until Paul gives them.",
+    "heading": "Pre-Series / Self Portraits",
+    "works": [
+      {
+        "id": "self-portrait-1",
+        "title": "Self Portrait #1",
+        "image": "self-portrait-1.jpg",
+        "year": null,
+        "technique": null,
+        "size": null,
+        "source": "Paul, 30 Oct 2026 (title only)"
+      },
+      {
+        "id": "self-portrait-2",
+        "title": "Self Portrait #2",
+        "image": "self-portrait-2.jpg",
+        "year": null,
+        "technique": null,
+        "size": null,
+        "source": "Paul, 30 Oct 2026 (title only)"
+      }
+    ]
+  }
 }

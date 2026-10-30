@@ -77,6 +77,13 @@ a{color:inherit;text-decoration:none}
   padding:clamp(40px,7vw,96px) 0;border-bottom:1px solid var(--rule);
 }
 .work:last-child{border-bottom:0}
+/* earlier works after the numbered series, outside the 250-work cycle */
+.works--pre{border-top:1px solid var(--rule)}
+.works__head{
+  padding-top:clamp(48px,8vw,104px);
+  font-size:10.5px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;
+}
+.works__head::after{content:"";display:block;width:104px;height:1px;background:var(--ink);margin-top:18px}
 .work__meta{display:flex;flex-direction:column;position:sticky;top:88px;padding-top:4px}
 .work__num{
   font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);

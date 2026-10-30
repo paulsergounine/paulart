@@ -16,6 +16,7 @@ errors, warnings = [], []
 data = json.loads((ROOT / "data/works.json").read_text(encoding="utf-8"))
 works = data["works"]
 nos = [w["no"] for w in works]
+pre = data.get("pre_series", {}).get("works", [])
 
 # 1. Data integrity
 if len(nos) != len(set(nos)):
@@ -34,6 +35,21 @@ for w in works:
         if not w.get(field):
             (warnings if DRAFT else errors).append(f"No. {w['no']}: {field} not confirmed")
 
+# Pre-series works: outside the numbered cycle, same rules for images and details
+pre_ids = [w["id"] for w in pre]
+if len(pre_ids) != len(set(pre_ids)):
+    errors.append(f"duplicate pre-series ids: {pre_ids}")
+for w in pre:
+    for px in (800, 1200, 1600):
+        f = ROOT / "images" / str(px) / w["image"]
+        if not f.exists():
+            errors.append(f"missing image {f.relative_to(ROOT)}")
+        elif px == 1600 and f.stat().st_size > 900_000:
+            warnings.append(f"{f.relative_to(ROOT)} is {f.stat().st_size // 1000} KB (budget 900 KB)")
+    for field in ("year", "technique", "size"):
+        if not w.get(field):
+            (warnings if DRAFT else errors).append(f"{w['title']}: {field} not confirmed")
+
 # 2. Identical photos under different numbers (the No. 11 / No. 12 mix-up)
 seen = {}
 for w in works:
@@ -43,6 +59,13 @@ for w in works:
         if key in seen:
             errors.append(f"No. {w['no']} and No. {seen[key]} use the same photo")
         seen[key] = w["no"]
+for w in pre:
+    f = ROOT / "images/800" / w["image"]
+    if f.exists():
+        key = f.read_bytes()[-4096:]
+        if key in seen:
+            errors.append(f"{w['title']} and No. {seen[key]} use the same photo")
+        seen[key] = w["title"]
 
 # 3. Page content rules
 html_files = sorted(ROOT.glob("*.html"))
@@ -62,9 +85,9 @@ for f in html_files:
 index = (ROOT / "index.html").read_text(encoding="utf-8")
 if "{{" in index:
     errors.append("index.html still contains template placeholders, run scripts/build.py")
-if index.count('class="work__open"') != len(works):
+if index.count('class="work__open"') != len(works) + len(pre):
     errors.append("a work is missing its full-screen viewer link, run scripts/build.py")
-if index.count('class="work"') != len(works):
+if index.count('class="work"') != len(works) + len(pre):
     errors.append("index.html is out of date with data/works.json, run scripts/build.py")
 
 # 4. Five scales diagram: one canvas format per rect, drawn to scale (1 unit = 1 cm),
@@ -88,5 +111,5 @@ for m in warnings:
     print("WARN ", m)
 for m in errors:
     print("FAIL ", m)
-print(f"{len(errors)} failed, {len(warnings)} warnings, {len(works)} works")
+print(f"{len(errors)} failed, {len(warnings)} warnings, {len(works)} works, {len(pre)} pre-series")
 sys.exit(1 if errors else 0)
