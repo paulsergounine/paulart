@@ -67,6 +67,23 @@ if index.count('class="work__open"') != len(works):
 if index.count('class="work"') != len(works):
     errors.append("index.html is out of date with data/works.json, run scripts/build.py")
 
+# 4. Five scales diagram: one canvas format per rect, drawn to scale (1 unit = 1 cm),
+#    all sharing the bottom-left corner, each labelled with its own size
+SCALES = [(200, 240), (175, 210), (150, 180), (125, 150), (100, 120)]
+svg = re.search(r'<svg class="scales__svg".*?</svg>', index, re.S)
+if not svg:
+    errors.append("index.html: five scales diagram missing (templates/index.html)")
+else:
+    rects = [tuple(int(v) for v in r) for r in re.findall(
+        r'<rect x="(\d+)" y="(\d+)" width="(\d+)" height="(\d+)"', svg.group())]
+    labels = re.findall(r'<text x="\d+" y="(\d+)">(\d+) × (\d+) cm</text>', svg.group())
+    if [(w, h) for _, _, w, h in rects] != SCALES:
+        errors.append(f"five scales: formats drawn are {rects}, expected {SCALES}")
+    if any(x != 0 or y + h != 240 for x, y, _, h in rects):
+        errors.append("five scales: rectangles do not share the bottom-left corner")
+    if [(int(y), int(w), int(h)) for y, w, h in labels] != [(240 - h, w, h) for w, h in SCALES]:
+        errors.append("five scales: labels do not match the formats or their top edges")
+
 for m in warnings:
     print("WARN ", m)
 for m in errors:
