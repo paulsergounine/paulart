@@ -89,8 +89,14 @@ def pre_series_section(pre):
     if not pre or not pre.get("works"):
         return ""
     figures = "\n".join(pre_figure(w) for w in pre["works"])
+    sub = (f'\n      <p class="works__sub">{escape(pre["subtitle"])}</p>'
+           if pre.get("subtitle") else "")
+    intro = (f'\n      <p class="works__text">{escape(pre["intro"])}</p>'
+             if pre.get("intro") else "")
     return f'''  <section class="works works--pre" aria-labelledby="pre-series">
-    <h2 class="works__head" id="pre-series">{escape(pre["heading"])}</h2>
+    <header class="works__intro">
+      <h2 class="works__head" id="pre-series">{escape(pre["heading"])}</h2>{sub}{intro}
+    </header>
 {figures}
   </section>'''
 

@@ -201,26 +201,28 @@
     }
   ],
   "pre_series": {
-    "_readme": "Earlier works shown after the numbered paintings, outside the 250-work cycle. Not counted in series.made. Titles confirmed by Paul (30 Oct 2026); year, technique and size not yet supplied, so they stay null until Paul gives them.",
-    "heading": "Pre-Series / Self Portraits",
+    "_readme": "Earlier works shown after the numbered paintings, outside the 250-work cycle. Not counted in series.made. Heading, subtitle, intro and all details confirmed by Paul (30 Oct 2026).",
+    "heading": "Pre-Series",
+    "subtitle": "Self Portraits, 2025",
+    "intro": "Two works preceding Mind Mechanics, documenting the early development of my visual language.",
     "works": [
       {
         "id": "self-portrait-1",
         "title": "Self Portrait #1",
         "image": "self-portrait-1.jpg",
-        "year": null,
-        "technique": null,
-        "size": null,
-        "source": "Paul, 30 Oct 2026 (title only)"
+        "year": "2025",
+        "technique": "Oil stick, oil pastel, acrylic, acrylic ground on canvas",
+        "size": "100 × 120 cm",
+        "source": "Paul, 30 Oct 2026"
       },
       {
         "id": "self-portrait-2",
         "title": "Self Portrait #2",
         "image": "self-portrait-2.jpg",
-        "year": null,
-        "technique": null,
-        "size": null,
-        "source": "Paul, 30 Oct 2026 (title only)"
+        "year": "2025",
+        "technique": "Oil stick, oil pastel, acrylic, acrylic ground on canvas",
+        "size": "100 × 120 cm",
+        "source": "Paul, 30 Oct 2026"
       }
     ]
   }
