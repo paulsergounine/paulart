@@ -41,9 +41,16 @@ def picture(name, alt, first=False):
             f'alt="{escape(alt)}" width="{w}" height="{h}" decoding="async" {loading}>')
 
 
+def plate_ratio(name):
+    """Width / height of a work photo, so CSS can size the plate to fit the viewport height."""
+    w, h = jpeg_size(ROOT / "images" / "1600" / name)
+    return f"{w}/{h}"
+
+
 def figure(work, first):
     name = f"mm-{work['no']:02d}.jpg"
     t = title(work)
+    ratio = plate_ratio(name)
     plate = (f'<a class="work__open" href="images/1600/{name}" data-caption="{escape(t)}">'
              f'{picture(name, t, first)}</a>')
     meta = [f'<span class="work__num">No. {work["no"]}</span>',
@@ -56,7 +63,7 @@ def figure(work, first):
         meta.append(f'<a class="work__more" href="process.html#no-{work["no"]}">See how it was made</a>')
     meta_html = "\n          ".join(meta)
     return f'''    <figure class="work" id="no-{work['no']}">
-        <div class="work__plate">
+        <div class="work__plate" style="--ar:{ratio}">
           {plate}
         </div>
         <figcaption class="work__meta">
@@ -68,6 +75,7 @@ def figure(work, first):
 def pre_figure(work):
     """An earlier work shown after the numbered series; it has no number in the cycle."""
     name, t = work["image"], work["title"]
+    ratio = plate_ratio(name)
     plate = (f'<a class="work__open" href="images/1600/{name}" data-caption="{escape(t)}">'
              f'{picture(name, t)}</a>')
     meta = ['<span class="work__num">Pre-series</span>',
@@ -76,7 +84,7 @@ def pre_figure(work):
              for v in (work.get("year"), work.get("technique"), work.get("size")) if v]
     meta_html = "\n          ".join(meta)
     return f'''    <figure class="work" id="{work['id']}">
-        <div class="work__plate">
+        <div class="work__plate" style="--ar:{ratio}">
           {plate}
         </div>
         <figcaption class="work__meta">
