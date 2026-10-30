@@ -199,5 +199,31 @@
       "size": "100 × 120 cm",
       "source": "catalogue"
     }
-  ]
+  ],
+  "pre_series": {
+    "_readme": "Earlier works shown after the numbered paintings, outside the 250-work cycle. Not counted in series.made. Heading, subtitle, intro and all details confirmed by Paul (30 Oct 2026).",
+    "heading": "Pre-Series",
+    "subtitle": "Self Portraits, 2025",
+    "intro": "Two works preceding Mind Mechanics, documenting the early development of my visual language.",
+    "works": [
+      {
+        "id": "self-portrait-1",
+        "title": "Self Portrait #1",
+        "image": "self-portrait-1.jpg",
+        "year": "2025",
+        "technique": "Oil stick, oil pastel, acrylic, acrylic ground on canvas",
+        "size": "120 × 100 cm",
+        "source": "Paul, 30 Oct 2026"
+      },
+      {
+        "id": "self-portrait-2",
+        "title": "Self Portrait #2",
+        "image": "self-portrait-2.jpg",
+        "year": "2025",
+        "technique": "Oil stick, oil pastel, acrylic, acrylic ground on canvas",
+        "size": "100 × 120 cm",
+        "source": "Paul, 30 Oct 2026"
+      }
+    ]
+  }
 }

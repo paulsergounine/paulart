@@ -65,6 +65,42 @@ def figure(work, first):
       </figure>'''
 
 
+def pre_figure(work):
+    """An earlier work shown after the numbered series; it has no number in the cycle."""
+    name, t = work["image"], work["title"]
+    plate = (f'<a class="work__open" href="images/1600/{name}" data-caption="{escape(t)}">'
+             f'{picture(name, t)}</a>')
+    meta = ['<span class="work__num">Pre-series</span>',
+            f'<span class="work__title">{escape(t)}</span>']
+    meta += [f'<span class="work__dim">{escape(v)}</span>'
+             for v in (work.get("year"), work.get("technique"), work.get("size")) if v]
+    meta_html = "\n          ".join(meta)
+    return f'''    <figure class="work" id="{work['id']}">
+        <div class="work__plate">
+          {plate}
+        </div>
+        <figcaption class="work__meta">
+          {meta_html}
+        </figcaption>
+      </figure>'''
+
+
+def pre_series_section(pre):
+    if not pre or not pre.get("works"):
+        return ""
+    figures = "\n".join(pre_figure(w) for w in pre["works"])
+    sub = (f'\n      <p class="works__sub">{escape(pre["subtitle"])}</p>'
+           if pre.get("subtitle") else "")
+    intro = (f'\n      <p class="works__text">{escape(pre["intro"])}</p>'
+             if pre.get("intro") else "")
+    return f'''  <section class="works works--pre" aria-labelledby="pre-series">
+    <header class="works__intro">
+      <h2 class="works__head" id="pre-series">{escape(pre["heading"])}</h2>{sub}{intro}
+    </header>
+{figures}
+  </section>'''
+
+
 def process_section(work):
     """One work's process sequence for process.html: steps, text, finished work."""
     t = title(work)
@@ -99,6 +135,7 @@ def main():
     works = sorted(data["works"], key=lambda w: -w["no"])
     html = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")
     html = html.replace("{{WORKS}}", "\n".join(figure(w, i == 0) for i, w in enumerate(works)))
+    html = html.replace("{{PRE_SERIES}}", pre_series_section(data.get("pre_series")))
     html = html.replace("{{MADE}}", f"{data['series']['made']:03d}")
     html = html.replace("{{PLANNED}}", str(data["series"]["planned"]))
     (ROOT / "index.html").write_text(html, encoding="utf-8")
@@ -108,9 +145,13 @@ def main():
         page = page.replace("{{PROCESS}}", "\n".join(process_section(w) for w in with_process))
         (ROOT / "process.html").write_text(page, encoding="utf-8")
     pending = [w["no"] for w in works if not (w.get("technique") and w.get("size"))]
-    print(f"index.html built: {len(works)} works")
+    pre = data.get("pre_series", {}).get("works", [])
+    print(f"index.html built: {len(works)} works, {len(pre)} pre-series")
     if pending:
         print("details still missing for Nos.", ", ".join(map(str, pending)))
+    pre_pending = [w["title"] for w in pre if not all(w.get(f) for f in ("year", "technique", "size"))]
+    if pre_pending:
+        print("details still missing for", ", ".join(pre_pending))
 
 
 if __name__ == "__main__":
