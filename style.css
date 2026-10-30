@@ -235,3 +235,13 @@ a{color:inherit;text-decoration:none}
 .process__final figcaption{
   margin-top:11px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
 }
+
+/* ---------- five scales diagram (Work page masthead) ---------- */
+.scales{grid-column:1/-1;margin-top:clamp(14px,3vw,36px);max-width:340px}
+.scales__label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-bottom:18px}
+.scales__svg{display:block;width:100%;height:auto;overflow:visible}
+.scales__rects{fill:none;stroke:var(--ink);stroke-width:1}
+.scales__rects rect{vector-effect:non-scaling-stroke;shape-rendering:crispEdges}
+.scales__leads{stroke:var(--rule);stroke-width:1;stroke-dasharray:1.5 2.5}
+.scales__leads line{vector-effect:non-scaling-stroke}
+.scales__dims{font-family:var(--serif);font-size:11.5px;fill:var(--ink);dominant-baseline:central}
